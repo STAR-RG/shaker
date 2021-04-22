@@ -1,6 +1,6 @@
 # shaker-action
 
-This action uses [@marcellocordeiro/stress-script](https://github.com/marcellocordeiro/stress-script) in your GitHub workflow to detect flakiness. If the job ends in failure, flakes were detected and errors will be reported.
+This action uses [@STAR-RG/shaker-standalone](https://github.com/STAR-RG/shaker-standalone) in your GitHub workflow to detect flakiness. If the job ends in failure, flakes were detected and errors will be reported.
 
 # Usage
 
@@ -8,7 +8,7 @@ This action uses [@marcellocordeiro/stress-script](https://github.com/marcelloco
 # Checks-out your repository under $GITHUB_WORKSPACE so Shaker can access it
 - uses: actions/checkout@v2.3.4
 - name: Shaker
-  uses: marcellocordeiro/stress-action@main
+  uses: STAR-RG/shaker-action@main
   with:
     # Testing tool
     # Currently supported tools: pytest, maven
