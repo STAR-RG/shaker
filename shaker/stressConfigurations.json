@@ -1,0 +1,26 @@
+[
+    {
+        "cpuWorkers": 2,
+        "cpuLoad": 2,
+        "vmWorkers": 1,
+        "vmBytes": 21
+    },
+    {
+        "cpuWorkers": 1,
+        "cpuLoad": 58,
+        "vmWorkers": 1,
+        "vmBytes": 33
+    },
+    {
+        "cpuWorkers": 1,
+        "cpuLoad": 61,
+        "vmWorkers": 1,
+        "vmBytes": 73
+    },
+    {
+        "cpuWorkers": 1,
+        "cpuLoad": 34,
+        "vmWorkers": 1,
+        "vmBytes": 37
+    }
+]

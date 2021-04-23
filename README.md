@@ -1,6 +1,6 @@
 # shaker-action
 
-This action uses [@STAR-RG/shaker-standalone](https://github.com/STAR-RG/shaker-standalone) in your GitHub workflow to detect flakiness. If the job ends in failure, flakes were detected and errors will be reported.
+This action uses [shaker](shaker) in your GitHub workflow to detect flakiness. If the job ends in failure, flakes were detected and errors will be reported.
 
 # Usage
 

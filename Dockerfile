@@ -20,6 +20,7 @@ RUN apt-get install -y stress-ng
 # git
 RUN apt-get install -y git
 
+COPY shaker /__shaker
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
