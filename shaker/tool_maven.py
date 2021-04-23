@@ -9,12 +9,12 @@ class Maven(BaseTool):
     def setup(self):
         arguments = "--batch-mode --update-snapshots --fail-never --quiet -DskipTests"
         command = f"mvn {arguments} clean install"
-        print(f"> {command}")
+        # print(f"> {command}")
         subprocess_run(command, cwd=str(self.directory))
 
     def run_tests(self, report_folder):
         command = f"mvn --quiet test"
-        print(f"> {command}")
+        # print(f"> {command}")
         subprocess_run(command, cwd=str(self.directory))
 
     def post_tests(self, report_folder):

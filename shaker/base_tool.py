@@ -15,12 +15,12 @@ class BaseTool:
         # Clear the output folder
         shutil.rmtree(self.output_folder, ignore_errors=True)
         self.output_folder.mkdir(parents=True, exist_ok=True)
-        
+
         self.setup()
 
     def start_stress_ng(self, config):
         command = f"stress-ng --cpu {config['cpuWorkers']} --cpu-load {config['cpuLoad']} --vm {config['vmWorkers']} --vm-bytes {config['vmBytes']}%"
-        print(f"> {command}")
+        # print(f"> {command}")
         self.stress_ng_process = subprocess_Popen(command)
 
         sleep(2)

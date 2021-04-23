@@ -10,12 +10,12 @@ class Pytest(BaseTool):
 
         if requirements_file.exists():
             command = "pip install -r requirements.txt"
-            print(f"> {command}")
+            # print(f"> {command}")
             subprocess_run(command, cwd=str(requirements_file.parent))
 
     def run_tests(self, report_folder):
         report_file = report_folder / "TEST-pytest.xml"
 
         command = f"pytest --junitxml {report_file.absolute()}"
-        print(f"> {command}")
+        # print(f"> {command}")
         subprocess_run(command, cwd=str(self.directory))
