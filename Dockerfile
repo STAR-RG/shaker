@@ -7,7 +7,7 @@ RUN apt-get update
 # Python support
 RUN apt-get install -y python3-pip
 RUN python3 -m pip install --upgrade pip
-RUN python3 -m pip install pytest colorama
+RUN python3 -m pip install pytest colorama requests
 
 # Java/Maven support
 RUN apt-get install -y openjdk-8-jdk

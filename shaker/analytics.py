@@ -3,11 +3,11 @@ import time
 from argparse import ArgumentParser
 from requests import get, patch, post, put
 
-# repoUrl = "http://localhost:3000/repos"
-# flakiesUrl = "http://localhost:3000/flakies"
+repoUrl = "http://localhost:3000/repos"
+flakiesUrl = "http://localhost:3000/flakies"
 
-repoUrl = "https://my-json-server.typicode.com/damorimRG/shaker-service/repos"
-flakiesUrl = "https://my-json-server.typicode.com/damorimRG/shaker-service/flakies"
+#repoUrl = "https://my-json-server.typicode.com/damorimRG/shaker-service/repos"
+#flakiesUrl = "https://my-json-server.typicode.com/damorimRG/shaker-service/flakies"
 
 parser = ArgumentParser()
 parser.add_argument("repo", help="repository")
