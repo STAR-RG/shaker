@@ -45,6 +45,9 @@ def main(args):
 
     # Show results
     failures = failure_parser.parse(output_folder)
+    with open("__results.json", "w") as f:
+        json.dump(failures, f)
+
     if len(failures) != 0:
         print_failures(failures, no_stress_runs, stress_runs, 4)
         exit(1)
