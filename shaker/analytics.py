@@ -58,7 +58,7 @@ for module in failures:
         flakeJson = json.loads(json.dumps(flake))
         post(flakiesUrl, json=flakeJson)
 
-if len(module):
+if len(failures):
     exit(1)
 else:
     exit(0)
