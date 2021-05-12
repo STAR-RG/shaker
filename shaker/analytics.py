@@ -19,7 +19,7 @@ args = parser.parse_args()
 
 total_runs = args.nsr + (args.sr * 4)
 
-repoInfo = {"id": args.repo, "ref": args.ref, "numTests": args.numtests}
+repoInfo = {"name": args.repo, "ref": args.ref, "num_tests": args.numtests}
 repoJson = json.loads(json.dumps(repoInfo))
 post(repoUrl, json=repoJson)
 
@@ -48,15 +48,15 @@ for module in failures:
         total_failures = no_stress_failures + stress_failures
         ratio = total_failures / total_runs
 
-        flake = {
-            "repo": repoInfo["id"],
+        flaky = {
+            "repo": repoInfo["name"],
             "module": module,
-            "functionName": testCaseName,
-            "datetimeEpoch": int(time.time()),
+            "function_name": testCaseName,
+            "datetime_epoch": int(time.time()),
             "ratio": ratio,
         }
-        flakeJson = json.loads(json.dumps(flake))
-        post(flakiesUrl, json=flakeJson)
+        flakyJson = json.loads(json.dumps(flaky))
+        post(flakiesUrl, json=flakyJson)
 
 if len(failures):
     exit(1)
