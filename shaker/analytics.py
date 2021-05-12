@@ -6,8 +6,8 @@ from requests import get, patch, post, put
 # repoUrl = "http://localhost:3000/repos"
 # flakiesUrl = "http://localhost:3000/flakies"
 
-repoUrl = "https://my-json-server.typicode.com/damorimRG/shaker-service/repos"
-flakiesUrl = "https://my-json-server.typicode.com/damorimRG/shaker-service/flakies"
+repoUrl = "https://my-new-app-denini.herokuapp.com/repos"
+flakiesUrl = "https://my-new-app-denini.herokuapp.com/flakies"
 
 parser = ArgumentParser()
 parser.add_argument("repo", help="repository")
@@ -51,7 +51,7 @@ for module in failures:
         flake = {
             "repo": repoInfo["id"],
             "module": module,
-            "function": testCaseName,
+            "functionName": testCaseName,
             "datetimeEpoch": int(time.time()),
             "ratio": ratio,
         }
