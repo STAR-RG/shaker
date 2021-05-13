@@ -11,7 +11,7 @@ do
 	for j in $(ls "$i"/*.txt 2> /dev/null);
 	do
 		h=$(grep -e "Tests run: [0-9]*" "$j" | awk '{print $3}' | sed 's/.$//')
-        tests=$(($tests + $h))
+		tests=$(($tests + $h))
     done
 done
 
