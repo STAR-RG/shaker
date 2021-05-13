@@ -8,11 +8,11 @@ collection=$(find . -type d -name 'surefire-reports')
 tests=0
 for i in $collection;
 do
-	for j in $(ls "$i"/*.txt 2> /dev/null);
-	do
-		h=$(grep -e "Tests run: [0-9]*" "$j" | awk '{print $3}' | sed 's/.$//')
-		tests=$(($tests + $h))
-    done
+  for j in $(ls "$i"/*.txt 2> /dev/null);
+  do
+    h=$(grep -e "Tests run: [0-9]*" "$j" | awk '{print $3}' | sed 's/.$//')
+    tests=$(($tests + $h))
+  done
 done
 
 python3 "./__shaker/analytics.py" $GITHUB_REPOSITORY $GITHUB_SHA $tests $INPUT_NO_STRESS_RUNS $INPUT_STRESS_RUNS
