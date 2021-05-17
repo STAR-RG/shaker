@@ -58,9 +58,4 @@ for module in failures:
         flakyJson = json.loads(json.dumps(flaky))
         post(flakiesUrl, json=flakyJson)
 
-if len(failures):
-    exit(1)
-else:
-    exit(0)
-
 # / == %2F

@@ -18,7 +18,8 @@ def main(args):
     # Environment setup
     directory = Path(args.directory)
     extra_arguments = args.extra_arguments
-    output_folder = Path(args.output_folder if args.output_folder else "./output")
+    output_folder = Path(
+        args.output_folder if args.output_folder else "./output")
     no_stress_runs = args.no_stress_runs
     stress_runs = args.stress_runs
     config_file = Path(__file__).parent / "stressConfigurations.json"
@@ -45,7 +46,7 @@ def main(args):
 
     # Show results
     failures = failure_parser.parse(output_folder)
-    with open("__results.json", "w") as f:
+    with open(output_folder / "__results.json", "w") as f:
         json.dump(failures, f)
 
     if len(failures) != 0:
@@ -62,7 +63,8 @@ if __name__ == "__main__":
         "tool", choices=["pytest", "maven"], help="specify testing tool"
     )
     parser.add_argument("directory", help="specify directory")
-    parser.add_argument("-e", "--extra-arguments", help="specify extra arguments")
+    parser.add_argument("-e", "--extra-arguments",
+                        help="specify extra arguments")
     parser.add_argument("-o", "--output-folder", help="specify output folder")
     parser.add_argument(
         "-sr",
