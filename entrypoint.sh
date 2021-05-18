@@ -3,6 +3,7 @@
 cp -r "/__shaker" "./"
 python3 "./__shaker/shaker.py" $INPUT_TESTING_TOOL "." -o "./__shaker_output" -nsr $INPUT_NO_STRESS_RUNS -sr $INPUT_STRESS_RUNS
 ret=$?
+
 #counting the tests
 collection=$(find . -type d -name 'surefire-reports')
 tests=0
@@ -15,6 +16,6 @@ do
   done
 done
 
-python3 "./__shaker/analytics.py" $GITHUB_REPOSITORY $GITHUB_SHA $tests $INPUT_NO_STRESS_RUNS $INPUT_STRESS_RUNS
+python3 "./__shaker/analytics.py" "./__shaker_output" $GITHUB_REPOSITORY $GITHUB_SHA $tests $INPUT_NO_STRESS_RUNS $INPUT_STRESS_RUNS
 
 exit $ret
