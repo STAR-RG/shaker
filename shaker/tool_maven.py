@@ -7,17 +7,25 @@ from util import subprocess_run
 
 class Maven(BaseTool):
     def setup(self):
-        arguments = "--batch-mode --update-snapshots --fail-never --quiet -DskipTests"
+        arguments = "--batch-mode --update-snapshots --fail-never  -DskipTests"
         command = f"mvn {arguments} clean install"
+        stdout_ = open(self.output_folder /
+                       "exec_setup.out", "a")
+        stderr_ = open(self.output_folder / "exec_setup.err", "a")
         # print(f"> {command}")
-        subprocess_run(command, cwd=str(self.directory),  stdout=self.output_folder /
-                       "exec_setup.out", stderr=self.output_folder / "exec_setup.err")
+        subprocess_run(command, cwd=str(self.directory),
+                       stdout=stdout_, stderr=stderr_)
 
     def run_tests(self, report_folder):
-        command = f"mvn --quiet test"
+        command = f"mvn test --fail-never --batch-mode"
         # print(f"> {command}")
-        subprocess_run(command, cwd=str(self.directory),  stdout=self.output_folder /
-                       "exec_stress.out", stderr=self.output_folder / "exec_stress.err")
+
+        stdout_ = open(self.output_folder /
+                       "exec_stress.out", "a")
+        stderr_ = open(self.output_folder / "exec_stress.err", "a")
+
+        subprocess_run(command, cwd=str(self.directory),
+                       stdout=stdout_, stderr=stderr_)
 
     def post_tests(self, report_folder):
         # Copy reports
