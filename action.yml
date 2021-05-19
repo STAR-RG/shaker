@@ -1,5 +1,8 @@
-name: Shaker
-description: Runs Shaker in your repository
+name: ShakerCI
+description: Detect flaky tests in your repo in CI
+branding: 
+  icon: box
+  color: yellow
 
 inputs:
   testing_tool:
