@@ -13,7 +13,7 @@ inputs:
     required: false
   no_stress_runs:
     description: Number of no-stress runs
-    default: "1"
+    default: "0"
     required: false
   stress_runs:
     description: Number of stress runs
