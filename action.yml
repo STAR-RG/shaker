@@ -5,8 +5,8 @@ branding:
   color: yellow
 
 inputs:
-  testing_tool:
-    description: Testing tool
+  tool:
+    description: Tool
     required: true
   extra_arguments:
     description: Extra arguments
@@ -15,8 +15,8 @@ inputs:
     description: Number of no-stress runs
     default: "0"
     required: false
-  stress_runs:
-    description: Number of stress runs
+  runs:
+    description: Number of Shaker runs
     default: "3"
     required: false
 

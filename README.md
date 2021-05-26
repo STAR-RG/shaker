@@ -14,32 +14,27 @@ Add the following code to your GitHub Actions workflow configuration
 - name: Shaker
   uses: STAR-RG/shaker-action@main
   with:
-    # Testing tool
-    # Currently supported tools: pytest, maven
+    # Tool
+    # Currently supported tools: maven, pytest
     # Required
     # Example: testing_tool: maven
-    testing_tool: "maven"
+    tool: "maven"
 
     # Pass extra arguments to the tool
     # Optional
     # Example: extra_arguments: -DModule.skip.tests=true
     extra_arguments: ""
 
-    # Number of stress runs
+    # Number of Shaker runs
     # Optional, default: 3
-    # Example: stress_runs: "3"
-    stress_runs: "3"
+    # Example: runs: "3"
+    runs: "3"
 ```
 
 ## Inputs
 
 | Input | Description |
 | --- | --- |
-| `testing_tool` | Specifies the tool required to run the tests. Currently supported: `maven` and `pytest`. |
-| `extra_arguments` | Passes extra arguments to the testing tool. For example, you can pass `-DModule.skip.tests=true` to tell Maven to skip a certain module. |
-| `stress_runs` | Specifies how many sets of stress runs to be executed. |
-
-## Planned features
-
-- [ ] Android support
-- [ ] Gradle support
+| `tool` | Specifies the tool required to run the tests. Currently supported: `maven` and `pytest`. |
+| `extra_arguments` | Optional. Passes extra arguments to the testing tool. For example, you can pass `-DModule.skip.tests=true` to tell Maven to skip a certain module. |
+| `runs` | Optional, default: 3. Specifies how many times Shaker will run. |
