@@ -45,10 +45,13 @@ Add the following code to your GitHub Actions workflow configuration
 
 
 # CLI Usage
+If you want to run a shaker in your environment, just do this:
 
 ## Usage
 ```bash
-cd shaker
+git clone https://github.com/STAR-RG/shaker
+cd shaker # entering the project
+cd shaker # entering the CLI
 ```
 
 ```
