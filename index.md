@@ -45,7 +45,7 @@ Add the following code to your GitHub Actions workflow configuration
 
 ## Usage Example
 
-Fork the repository below to test Shaker: https://github.com/STAR-RG/java-application-test .
+Fork the repository below to test Shaker: [https://github.com/STAR-RG/java-application-test](https://github.com/STAR-RG/java-application-test)
 1. `git clone` your fork or your own project.
 2. Into the project, create a folder called `.github/workflows`.
 ```bash
