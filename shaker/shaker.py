@@ -77,7 +77,7 @@ if __name__ == "__main__":
         "-nsr",
         "--no-stress-runs",
         type=int,
-        default=1,
+        default=0,
         help="specify number of no-stress runs",
     )
 
