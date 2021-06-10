@@ -44,20 +44,19 @@ Add the following code to your GitHub Actions workflow configuration
 | `runs` | Optional, default: 3. Specifies how many times Shaker will run. |
 
 ## Example
-### Using local reposotory
-1. You can fork this repository to test shaker usage: https://github.com/STAR-RG/java-application-test .
-2. `git clone` your fork or project.
-3. Into the project, create a folder called `.github/workflows`.
+
+Note: You can fork this repository to test shaker usage: https://github.com/STAR-RG/java-application-test .
+1. `git clone` your fork or your own project.
+2. Into the project, create a folder called `.github/workflows`.
 ```bash
 mkdir -p .github/workflows
 ```
-4. Create a file `.yml`, for example `main.yml`.
+3. Create a file `.yml`, for example `main.yml`.
 ```bash
 touch main.yml
 ```
-5. Write the action that runs shaker in the file:
-main.yml
-```yml
+4. Write the action that runs shaker in the `.yml` file:
+```yaml
 # This is a basic workflow to help you get started with Actions 
 
 name: CI
@@ -90,18 +89,15 @@ jobs:
           testing_tool: maven
           runs: 3
 ```
-6. Ok, now you can commit and push to your github
+5. Ok, now you can commit and push to your github
 ```bash
 git add .github
 git commit -m "add shaker action"
 git push
 ```
-7. Your trigger is configured, now just make a simple commit and your workflow will run in github action
+6. Your trigger is configured, every time you commit or pull request on the main branch the action will be triggered.
+Now just make a simple commit and your workflow will run in github action.
 
-
-### Using GiHub site
-TODO
-https://github.com/marketplace/actions/shakerci
 
 # CLI Usage
 If you want to run a shaker in your environment, just do this:
