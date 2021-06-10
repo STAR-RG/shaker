@@ -21,7 +21,7 @@ Add the following code to your GitHub Actions workflow configuration
     # Tool
     # Currently supported tools: maven, pytest
     # Required
-    # Example: testing_tool: maven
+    # Example: tool: maven
     tool: "maven"
 
     # Pass extra arguments to the tool
@@ -86,7 +86,7 @@ jobs:
       - name: Java tests
         uses: STAR-RG/shaker@main
         with:
-          testing_tool: maven
+          tool: maven
           runs: 3
 ```
 Ok, now you can commit and push to your github
@@ -101,6 +101,8 @@ Now just make a simple commit and your workflow will run in github action.
 ```bash
 git commit --allow-empty -m "emptry commit to trigger the action"
 ```
+
+Now go to your fork/project on the browser and select the 'Actions' tab. You should see
 
 # CLI Usage
 If you want to run a shaker in your environment, just do this:
