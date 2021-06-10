@@ -38,3 +38,7 @@ Add the following code to your GitHub Actions workflow configuration
 | `tool` | Specifies the tool required to run the tests. Currently supported: `maven` and `pytest`. |
 | `extra_arguments` | Optional. Passes extra arguments to the testing tool. For example, you can pass `-DModule.skip.tests=true` to tell Maven to skip a certain module. |
 | `runs` | Optional, default: 3. Specifies how many times Shaker will run. |
+
+# Examples
+
+To see examples [visit our website](https://star-rg.github.io/shaker/).
