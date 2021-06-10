@@ -53,7 +53,7 @@ mkdir -p .github/workflows
 ```
 3. Create a file `.yml`, for example `main.yml`.
 ```bash
-touch main.yml
+touch .github/workflows/main.yml
 ```
 4. Write the action that runs Shaker in the `.yml` file.
 
