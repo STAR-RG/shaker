@@ -16,7 +16,7 @@ Add the following code to your GitHub Actions workflow configuration
 # Checks-out your repository under $GITHUB_WORKSPACE so Shaker can access it
 - uses: actions/checkout@v2.3.4
 - name: Shaker
-  uses: STAR-RG/shaker-action@main
+  uses: STAR-RG/shaker@main
   with:
     # Tool
     # Currently supported tools: maven, pytest
