@@ -14,7 +14,7 @@ Add the following code to your GitHub Actions workflow configuration
 
 ```yaml
 # Checks-out your repository under $GITHUB_WORKSPACE so Shaker can access it
-- uses: actions/checkout@v2.3.4
+- uses: actions/checkout@v2
 - name: Shaker
   uses: STAR-RG/shaker@main
   with:
@@ -58,7 +58,7 @@ touch .github/workflows/main.yml
 4. Write the action that runs Shaker in the `.yml` file.
 
 
-```
+```yaml
 name: CI # This is a basic workflow to help you get started with Actions 
 
 # Controls when the action will run. 
@@ -103,6 +103,7 @@ git commit --allow-empty -m "emptry commit to trigger the action"
 ```
 
 Now go to your fork/project on the browser and select the 'Actions' tab. You should see
+![Action on github](CI.png "Action on github")
 
 # CLI Usage
 If you want to run a shaker in your environment, just do this:
