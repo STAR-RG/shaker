@@ -148,8 +148,6 @@ optional arguments:
 
 In this example, Shaker ran the tests 17 times: 1 no-stress runs and 4 (* 4 configurations) stress runs. The following test passed all no-stress runs but failed 4 stress runs, corresponding to 23.53% out of the 17 runs due to an assertion error. If the same test failed with different issues, the errors will be reported as well.
 
-Note: You can fork this repository to test Shaker usage: https://github.com/STAR-RG/java-application-test
-
 ```
 $ ./shaker.py --no-stress-runs 1 --stress-runs 4 maven "project/path"
 
