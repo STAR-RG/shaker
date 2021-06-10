@@ -43,11 +43,77 @@ Add the following code to your GitHub Actions workflow configuration
 | `extra_arguments` | Optional. Passes extra arguments to the testing tool. For example, you can pass `-DModule.skip.tests=true` to tell Maven to skip a certain module. |
 | `runs` | Optional, default: 3. Specifies how many times Shaker will run. |
 
+## Example
+### Using local reposotory
+1. You can fork this repository to test shaker usage: https://github.com/STAR-RG/java-application-test .
+2. `git clone` your fork or project.
+3. Into the project, create a folder called `.github/workflows`.
+```bash
+mkdir -p .github/workflows
+```
+4. Create a file `.yml`, for example `main.yml`.
+```bash
+touch main.yml
+```
+5. Write the action that runs shaker in the file:
+main.yml
+```yml
+# This is a basic workflow to help you get started with Actions 
+
+name: CI
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - name: Java tests
+        uses: STAR-RG/shaker-action@main
+        with:
+          testing_tool: maven
+          runs: 3
+```
+6. Ok, now you can commit and push to your github
+```bash
+git add .github
+git commit -m "add shaker action"
+git push
+```
+7. Your trigger is configured, now just make a simple commit and your workflow will run in github action
+
+
+### Using GiHub site
+TODO
+https://github.com/marketplace/actions/shakerci
 
 # CLI Usage
 If you want to run a shaker in your environment, just do this:
 
 ## Usage
+
+Install stress-ng
+```bash
+sudo apt-get install stress-ng
+```
+
+Download shaker and enter the shaker folder
 ```bash
 git clone https://github.com/STAR-RG/shaker
 cd shaker # entering the project
