@@ -84,7 +84,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: Java tests
-        uses: STAR-RG/shaker-action@main
+        uses: STAR-RG/shaker@main
         with:
           testing_tool: maven
           runs: 3
