@@ -105,7 +105,7 @@ git commit --allow-empty -m "emptry commit to trigger the action"
 Now go to your fork/project on the browser and select the 'Actions' tab. You should see
 ![Action on github](CI.png "Action on github")
 
-# CLI Usage
+# Command Line Interface (CLI)
 If you want to run a shaker in your environment, just do this:
 
 ## Usage
@@ -122,7 +122,7 @@ git clone https://github.com/STAR-RG/java-application-test
 ```
 Run shaker:
 ```bash
-shaker/shaker/shaker.py --sr 4 maven "java-application-test"
+shaker/shaker/shaker.py -sr 4 maven "java-application-test"
 ```
 ```
 usage: shaker.py [-h] [-e EXTRA_ARGUMENTS] [-o OUTPUT_FOLDER] [-sr STRESS_RUNS] [-nsr NO_STRESS_RUNS] {pytest,maven} directory
