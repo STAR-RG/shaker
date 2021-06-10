@@ -4,7 +4,7 @@ Shaker is a script that detects flakiness in codebases by introducing noise and 
 
 # GitHub Action
 
-This action uses [shaker](shaker) in your GitHub workflow to detect flakiness. If the job ends in failure, flakes were detected and errors will be reported.
+This action uses [Shaker](shaker) in your GitHub workflow to detect flakiness. If the job ends in failure, flakes were detected and errors will be reported.
 
 Shaker supports projects using `maven` or `pytest`.
 
@@ -45,7 +45,7 @@ Add the following code to your GitHub Actions workflow configuration
 
 ## Example
 
-Note: You can fork this repository to test shaker usage: https://github.com/STAR-RG/java-application-test .
+Note: You can fork this repository to test Shaker usage: https://github.com/STAR-RG/java-application-test .
 1. `git clone` your fork or your own project.
 2. Into the project, create a folder called `.github/workflows`.
 ```bash
@@ -55,7 +55,7 @@ mkdir -p .github/workflows
 ```bash
 touch main.yml
 ```
-4. Write the action that runs shaker in the `.yml` file.
+4. Write the action that runs Shaker in the `.yml` file.
 
 
 ```
@@ -96,8 +96,11 @@ git commit -m "add shaker action"
 git push
 ```
 Your trigger is configured, every time you commit or pull request on the main branch the action will be triggered.
-Now just make a simple commit and your workflow will run in github action.
+Now just make a simple commit and your workflow will run in github action. 
 
+```bash
+git commit --allow-empty -m "emptry commit to trigger the action"
+```
 
 # CLI Usage
 If you want to run a shaker in your environment, just do this:
