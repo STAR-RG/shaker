@@ -6,7 +6,7 @@ Shaker is a tool to detect flakiness in codebases by introducing noise and load 
 
 This action uses [Shaker](https://github.com/STAR-RG/shaker) in your GitHub workflow to detect flakiness. If the job ends in failure, flakes were detected and errors will be reported.
 
-Shaker supports projects using `maven` or `pytest`.
+Shaker supports Java (`maven-based`) and Python projects (`pytest-based`).
 
 ## Usage
 
@@ -15,7 +15,7 @@ Add the following code to your GitHub Actions workflow configuration
 ```yaml
 # Checks-out your repository under $GITHUB_WORKSPACE so Shaker can access it
 - uses: actions/checkout@v2
-- name: Shaker
+- name: [your-task-name]
   uses: STAR-RG/shaker@main
   with:
     # Tool
