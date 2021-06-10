@@ -88,13 +88,13 @@ jobs:
           runs: 3
 ```
 
-Ok, now you can commit and push to your github
+5. Ok, now you can commit and push to your github
 ```bash
 git add .github
 git commit -m "add shaker action"
 git push
 ```
-Your trigger is configured, every time you commit or pull request on the main branch the action will be triggered.
+6. Your trigger is configured, every time you commit or pull request on the main branch the action will be triggered.
 Now just make a simple commit and your workflow will run in github action.
 
 
