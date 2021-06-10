@@ -87,7 +87,6 @@ jobs:
           testing_tool: maven
           runs: 3
 ```
-
 Ok, now you can commit and push to your github
 ```bash
 git add .github
