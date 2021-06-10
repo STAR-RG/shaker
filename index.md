@@ -114,6 +114,7 @@ Install stress-ng
 ```bash
 sudo apt-get install stress-ng
 ```
+## Example
 
 Download shaker and our project
 ```bash
@@ -122,8 +123,10 @@ git clone https://github.com/STAR-RG/java-application-test
 ```
 Run shaker:
 ```bash
-shaker/shaker/shaker.py -sr 4 maven "java-application-test"
+shaker/shaker/shaker.py --stress-runs 4 maven "java-application-test"
 ```
+If Shaker finds flaky the results are printed on the terminal. Otherwise nothing is printed on the terminal.
+
 ```
 usage: shaker.py [-h] [-e EXTRA_ARGUMENTS] [-o OUTPUT_FOLDER] [-sr STRESS_RUNS] [-nsr NO_STRESS_RUNS] {pytest,maven} directory
 
@@ -142,8 +145,6 @@ optional arguments:
   -nsr NO_STRESS_RUNS, --no-stress-runs NO_STRESS_RUNS
                         specify number of no-stress runs
 ```
-
-## Example
 
 In this example, Shaker ran the tests 17 times: 1 no-stress runs and 4 (* 4 configurations) stress runs. The following test passed all no-stress runs but failed 4 stress runs, corresponding to 23.53% out of the 17 runs due to an assertion error. If the same test failed with different issues, the errors will be reported as well.
 
