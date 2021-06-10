@@ -43,9 +43,9 @@ Add the following code to your GitHub Actions workflow configuration
 | `extra_arguments` | Optional. Passes extra arguments to the testing tool. For example, you can pass `-DModule.skip.tests=true` to tell Maven to skip a certain module. |
 | `runs` | Optional, default: 3. Specifies how many times Shaker will run. |
 
-## Example
+## Usage Example
 
-Note: You can fork this repository to test Shaker usage: https://github.com/STAR-RG/java-application-test .
+Fork the repository below to test Shaker: https://github.com/STAR-RG/java-application-test .
 1. `git clone` your fork or your own project.
 2. Into the project, create a folder called `.github/workflows`.
 ```bash
