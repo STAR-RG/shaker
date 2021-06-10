@@ -115,13 +115,15 @@ Install stress-ng
 sudo apt-get install stress-ng
 ```
 
-Download shaker and enter the shaker folder
+Download shaker and download the project
 ```bash
 git clone https://github.com/STAR-RG/shaker
-cd shaker # entering the project
-cd shaker # entering the CLI
+git clone https://github.com/STAR-RG/java-application-test
 ```
-
+run shaker:
+```bash
+shaker/shaker/shaker.py --sr 4 maven "java-application-test"
+```
 ```
 usage: shaker.py [-h] [-e EXTRA_ARGUMENTS] [-o OUTPUT_FOLDER] [-sr STRESS_RUNS] [-nsr NO_STRESS_RUNS] {pytest,maven} directory
 
