@@ -55,11 +55,10 @@ mkdir -p .github/workflows
 ```bash
 touch main.yml
 ```
-4. Write the action that runs shaker in the `.yml` file:
-```yaml
-# This is a basic workflow to help you get started with Actions 
+4. Write the action that runs shaker in the `.yml` file.
 
-name: CI
+```yaml
+name: CI # This is a basic workflow to help you get started with Actions 
 
 # Controls when the action will run. 
 on:
@@ -89,6 +88,7 @@ jobs:
           testing_tool: maven
           runs: 3
 ```
+
 5. Ok, now you can commit and push to your github
 ```bash
 git add .github
