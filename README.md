@@ -1,4 +1,4 @@
-# shaker-action
+# shaker
 
 This action uses [shaker](shaker) in your GitHub workflow to detect flakiness. If the job ends in failure, flakes were detected and errors will be reported.
 
@@ -12,7 +12,7 @@ Add the following code to your GitHub Actions workflow configuration
 # Checks-out your repository under $GITHUB_WORKSPACE so Shaker can access it
 - uses: actions/checkout@v2.3.4
 - name: Shaker
-  uses: STAR-RG/shaker-action@main
+  uses: STAR-RG/shaker@main
   with:
     # Tool
     # Currently supported tools: maven, pytest
