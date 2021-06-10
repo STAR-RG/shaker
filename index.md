@@ -102,7 +102,9 @@ Now just make a simple commit and your workflow will run in github action.
 git commit --allow-empty -m "emptry commit to trigger the action"
 ```
 
-Now go to your fork/project on the browser and select the 'Actions' tab. You should see
+Now go to your fork/project on the browser and select the 'Actions' tab. 
+This step should take around 4 minutes to complete.
+When the Action finishes running you should see
 ![Action on github](CI.png "Action on github")
 
 # Command Line Interface (CLI)
