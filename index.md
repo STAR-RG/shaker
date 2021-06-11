@@ -100,7 +100,7 @@ Your trigger is configured, every time you commit or pull request on the main br
 Now just make a simple commit and your workflow will run in github action. 
 
 ```bash
-git commit --allow-empty -m "emptry commit to trigger the action"
+git commit --allow-empty -m "empty commit to trigger the action"
 git push
 ```
 
