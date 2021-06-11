@@ -1,6 +1,6 @@
 # Shaker
 
-Shaker is a tool to detect flakiness in codebases by introducing noise and load to the execution environment. It currently supports pytest and Maven. For each stress run, it will run the tests once for each one of the 4 stress configurations.
+Shaker is a tool to detect flakiness in codebases by introducing noise and load to the execution environment. Shaker currently supports two operation modes: it is  available as a GitHub Actions workflow that can be seamlessly integrated with any GitHub project; and it can also be used via its provided Command Line Interface (CLI). Next, we explain the setup and provide examples of usage for each operation mode.
 
 # GitHub Action
 
