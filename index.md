@@ -101,6 +101,7 @@ Now just make a simple commit and your workflow will run in github action.
 
 ```bash
 git commit --allow-empty -m "emptry commit to trigger the action"
+git push
 ```
 
 Now go to your fork/project on the browser and select the 'Actions' tab. 
