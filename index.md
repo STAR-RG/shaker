@@ -46,17 +46,17 @@ Add the following code to your GitHub Actions workflow configuration
 
 ## Usage Example
 
-Fork the repository below to test Shaker: [https://github.com/STAR-RG/java-application-test](https://github.com/STAR-RG/java-application-test)
-1. `git clone` your fork or your own project.
-2. Into the project, create a folder called `.github/workflows`.
+1. Fork the repository: [https://github.com/STAR-RG/java-application-test](https://github.com/STAR-RG/java-application-test) or it can be any project of yours.
+2. `git clone` your fork or your own project.
+3. Into the project, create a folder called `.github/workflows`.
 ```bash
 mkdir -p .github/workflows
 ```
-3. Create a file `.yml`, for example `main.yml`.
+4. Create a file `.yml`, for example `main.yml`.
 ```bash
 touch .github/workflows/main.yml
 ```
-4. Write the action that runs Shaker in the `.yml` file.
+5. Write the action that runs Shaker in the `.yml` file.
 
 
 ```yaml
