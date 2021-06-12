@@ -167,3 +167,7 @@ $ ./shaker.py --no-stress-runs 1 --stress-runs 4 maven "project/path"
          	at org.testng.Assert.assertNotEquals(Assert.java:744)
          	at com.project.MyModule.testExample(MyModule.java:100)
 ```
+
+## Demo Video
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7-aiQwOb4rA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
