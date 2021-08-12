@@ -1,5 +1,6 @@
 from pathlib import Path
 from xml.etree import ElementTree
+showln = True
 
 
 def order(entry):
@@ -65,6 +66,59 @@ def parse(dir):
             failures[key][key2].sort(key=order)
 
     return failures
+
+
+def parse_android(dir):
+    # print("end")
+    # exit(0)
+
+    for sub_directory in dir.iterdir():
+        if not sub_directory.is_dir():
+            continue
+
+        # report.configuration.run_number
+        failures = dict()
+        testsFails = dict()
+        config = sub_directory.name.split(".")[1].strip()
+        run_number = sub_directory.name.split(".")[2].strip()
+
+        out_txt_files = sub_directory.glob(f"exec.out")
+
+        for out_txt_file in out_txt_files:
+            with open(out_txt_file, "r") as reader:
+                ln = 0
+                for line in reader:
+                    lastName = ''
+                    ln = ln + 1
+                    stripped_line = line.strip()
+                    if stripped_line == 'INSTRUMENTATION_RESULT: stream=':
+                        print(f'linha {ln}')  # if is log for tests fails
+                        count = 1
+                        for line in reader:
+                            ln = ln + 1
+                            stripped_line = line.strip()
+                            if stripped_line.startswith('INS'):
+                                break  # leaves the inner loop
+                            failLine = f'{count}) '
+                            if stripped_line.startswith(failLine):
+                                count += 1
+                                if showln:
+                                    print('line %d -> fail: %s' %
+                                          (ln, stripped_line))
+                                test = line[3:]  # retire the '1) '
+                                test = test.strip()  # for cases '10) '
+                                position = test.index('(')
+                                # remove the package for test name
+                                test = test[:position]
+                                try:
+                                    testsFails[test] += 1
+                                except KeyError as _:
+                                    testsFails[test] = 1
+
+        with open(sub_directory / "___results.csv", 'w') as f:
+            n = len(testsFails.keys()) / 42
+            f.write(f"{n}")
+    return testsFails
 
 
 """import json

@@ -13,8 +13,8 @@ class BaseTool:
         self.stress_ng_process = None
 
         # Clear the output folder
-        shutil.rmtree(self.output_folder, ignore_errors=True)
-        self.output_folder.mkdir(parents=True, exist_ok=True)
+        # shutil.rmtree(self.output_folder, ignore_errors=True)
+        # self.output_folder.mkdir(parents=True, exist_ok=True)
 
         self.setup()
 

@@ -10,10 +10,11 @@ import failure_parser
 from print_failures import print_failures
 from tool_maven import Maven
 from tool_pytest import Pytest
+from tool_android import Android
 
 
 def main(args):
-    tools = {"pytest": Pytest, "maven": Maven}
+    tools = {"pytest": Pytest, "maven": Maven, "android": Android}
 
     # Environment setup
     directory = Path(args.directory)
@@ -22,7 +23,7 @@ def main(args):
         args.output_folder if args.output_folder else "./output")
     no_stress_runs = args.no_stress_runs
     stress_runs = args.stress_runs
-    config_file = Path(__file__).parent / "stressConfigurations.json"
+    config_file = Path(__file__).parent / "configs_30_random.json"
 
     with open(config_file) as json_file:
         configs = json.load(json_file)
@@ -39,15 +40,25 @@ def main(args):
 
     # Run tests
     for i in range(0, no_stress_runs):
-        tool.no_stress(i)
+        # tool.no_stress(i)
+        ç = 1
 
     for i in range(0, stress_runs):
-        tool.stress(i)
+        # tool.stress(i)
+        ç = 1
 
-    # Show results
-    failures = failure_parser.parse(output_folder)
+        # Show results
+    if args.tool == "android":
+        failures = failure_parser.parse_android(output_folder)
+    else:
+        failures = failure_parser.parse(output_folder)
+
     with open(output_folder / "__results.json", "w") as f:
         json.dump(failures, f)
+        if args.tool == "android":
+            with open(output_folder / "__results.csv", 'w') as f:
+                for k in failures.keys():
+                    f.write(f"{k}\t{failures[k]}\n")
 
     if len(failures) != 0:
         print_failures(failures, no_stress_runs, stress_runs, 4)
@@ -60,7 +71,7 @@ if __name__ == "__main__":
     parser = ArgumentParser()
 
     parser.add_argument(
-        "tool", choices=["pytest", "maven"], help="specify testing tool"
+        "tool", choices=["pytest", "maven", "android"], help="specify testing tool"
     )
     parser.add_argument("directory", help="specify directory")
     parser.add_argument("-e", "--extra-arguments",
