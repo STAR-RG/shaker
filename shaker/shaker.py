@@ -23,13 +23,13 @@ def main(args):
     no_stress_runs = args.no_stress_runs
     stress_runs = args.stress_runs
     config_file = Path(__file__).parent / "stressConfigurations.json"
-    specific_tests_path = args.specific_tests_path
+    tests_path = args.tests_path
 
     with open(config_file) as json_file:
         configs = json.load(json_file)
 
     # Construct tool object and set it up
-    tool = tools[args.tool](directory, extra_arguments, configs, output_folder, specific_tests_path)
+    tool = tools[args.tool](directory, extra_arguments, configs, output_folder, tests_path)
 
     logging.basicConfig(level=logging.DEBUG)
     logging.info(
@@ -83,8 +83,8 @@ if __name__ == "__main__":
     )
 
     parser.add_argument(
-        "-stp",
-        "--specific-tests-path",
+        "-tp",
+        "--tests-path",
         help="specify the path of the test you want Shaker to run",
     )
 
