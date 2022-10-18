@@ -21,6 +21,8 @@ optional arguments:
                         specify number of stress runs
   -nsr NO_STRESS_RUNS, --no-stress-runs NO_STRESS_RUNS
                         specify number of no-stress runs
+  -tp TESTS_PATH, --tests-path TESTS_PATH
+                        specify the path of the test(s) Shaker will execute
 ```
 
 ## Example
