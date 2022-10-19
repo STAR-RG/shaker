@@ -16,6 +16,9 @@ class Pytest(BaseTool):
     def run_tests(self, report_folder):
         report_file = report_folder / "TEST-pytest.xml"
 
-        command = f"pytest --junitxml {report_file.absolute()}"
+        command = (
+            f"pytest {self.tests_path} --junitxml {report_file.absolute()}"
+            if self.tests_path else f"pytest --junitxml {report_file.absolute()}"
+        )
         # print(f"> {command}")
         subprocess_run(command, cwd=str(self.directory))

@@ -5,12 +5,13 @@ from util import subprocess_Popen
 
 
 class BaseTool:
-    def __init__(self, directory, extra_arguments, configs, output_folder):
+    def __init__(self, directory, extra_arguments, configs, output_folder, tests_path):
         self.directory = directory
         self.extra_arguments = extra_arguments
         self.configs = configs
         self.output_folder = output_folder
         self.stress_ng_process = None
+        self.tests_path = tests_path
 
         # Clear the output folder
         shutil.rmtree(self.output_folder, ignore_errors=True)

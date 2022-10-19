@@ -17,6 +17,10 @@ class Maven(BaseTool):
                        stdout=stdout_, stderr=stderr_)
 
     def run_tests(self, report_folder):
+        if self.tests_path:
+            # TODO: Allow users to specify test(s) to run.
+            print("Can't specify tests using Maven. Execution will run all tests.")
+
         command = f"mvn test --fail-never --batch-mode"
         # print(f"> {command}")
 
