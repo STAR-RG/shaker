@@ -44,3 +44,9 @@ $ ./shaker.py --no-stress-runs 1 --stress-runs 4 maven "project/path"
          	at org.testng.Assert.assertNotEquals(Assert.java:744)
          	at com.project.MyModule.testExample(MyModule.java:100)
 ```
+
+
+
+### Jest Example
+
+./shaker-js/shaker/shaker.py --stress-runs 1 --no-stress-runs 1 jest "react-styleguidist" --tests-command "yarn test:jest"
