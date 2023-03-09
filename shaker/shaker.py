@@ -8,12 +8,13 @@ from time import sleep
 
 import failure_parser
 from print_failures import print_failures
+# tools
 from tool_maven import Maven
 from tool_pytest import Pytest
-
+from tool_jest import Jest
 
 def main(args):
-    tools = {"pytest": Pytest, "maven": Maven}
+    tools = {"pytest": Pytest, "maven": Maven , "jest": Jest }
 
     # Environment setup
     directory = Path(args.directory)
@@ -61,7 +62,7 @@ if __name__ == "__main__":
     parser = ArgumentParser()
 
     parser.add_argument(
-        "tool", choices=["pytest", "maven"], help="specify testing tool"
+        "tool", choices=["pytest", "maven", "jest"], help="specify testing tool"
     )
     parser.add_argument("directory", help="specify directory")
     parser.add_argument("-e", "--extra-arguments",
@@ -86,6 +87,13 @@ if __name__ == "__main__":
         "-tp",
         "--tests-path",
         help="specify the path of the test you want Shaker to run",
+    )
+
+    parser.add_argument(
+        "-tc",
+        "--tests-command",
+        type=str,
+        help="specify the command to tun tests you want Flaky Forcer to run",
     )
 
     args = parser.parse_args()
