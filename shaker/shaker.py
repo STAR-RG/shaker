@@ -39,12 +39,14 @@ def main(args):
 
     sleep(2)
 
+    tests_command = args.tests_command
+
     # Run tests
     for i in range(0, no_stress_runs):
-        tool.no_stress(i)
+        tool.no_stress(i, tests_command)
 
     for i in range(0, stress_runs):
-        tool.stress(i)
+        tool.stress(i, tests_command)
 
     # Show results
     failures = failure_parser.parse(output_folder)

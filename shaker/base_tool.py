@@ -29,18 +29,18 @@ class BaseTool:
     def stop_stress_ng(self):
         self.stress_ng_process.kill()
 
-    def no_stress(self, run_number):
+    def no_stress(self, run_number, tests_command):
         report_folder = self.output_folder / f"report.no-stress.{run_number}"
 
-        self.run_tests(report_folder)
+        self.run_tests(report_folder, tests_command)
         self.post_tests(report_folder)
 
-    def stress(self, run_number):
+    def stress(self, run_number, tests_command):
         for i, config in enumerate(self.configs):
             report_folder = self.output_folder / f"report.{i}.{run_number}"
 
             self.start_stress_ng(config)
-            self.run_tests(report_folder)
+            self.run_tests(report_folder, tests_command)
             self.stop_stress_ng()
             self.post_tests(report_folder)
 
