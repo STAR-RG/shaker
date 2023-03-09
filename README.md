@@ -4,7 +4,7 @@
 
 This action uses [shaker](shaker) in your GitHub workflow to detect flakiness. If the job ends in failure, flakes were detected and errors will be reported.
 
-Shaker supports projects using `maven` or `pytest`.
+Shaker supports projects using `jest`, `maven` or `pytest`.
 
 ## Usage
 
