@@ -13,7 +13,7 @@ RUN python3 -m pip install pytest colorama requests
 RUN apt-get install -y openjdk-8-jdk
 RUN apt-get install -y maven
 RUN apt-get install -y nodejs npm
-RUN npm i -g yarn
+RUN npm i yarn
 
 # stress-ng
 RUN apt-get install -y stress-ng

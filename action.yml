@@ -20,9 +20,9 @@ inputs:
     default: "3"
     required: false
 
-  test_command:
+  tests_command:
     description: Command to run tests
-    default: "yarn test"
+    default: "npm run test"
     required: false
 
 runs:
