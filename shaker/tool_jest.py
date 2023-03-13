@@ -25,11 +25,11 @@ class Jest(BaseTool):
                        stdout=stdout_, stderr=stderr_)
 
     def run_tests(self, report_folder, tests_command):
-        string_report = str(report_folder).split('/output/')[1]
+        string_report = str(report_folder).split('output/')[1]
         string_report = './output/' + string_report[0:len(string_report)]
-        env_ = os.environ.copy()
-        env_["JEST_JUNIT_UNIQUE_OUTPUT_NAME"] = "true"
-        env_["JEST_JUNIT_OUTPUT_DIR"] = string_report
+        env = os.environ.copy()
+        env["JEST_JUNIT_UNIQUE_OUTPUT_NAME"] = "true"
+        env["JEST_JUNIT_OUTPUT_DIR"] = string_report
 
         command = (
             f"{tests_command} {self.tests_path} --reporters=default --reporters=jest-junit"
@@ -39,4 +39,4 @@ class Jest(BaseTool):
                        "exec_setup.out", "a")
         stderr_ = open(self.output_folder / "exec_setup.err", "a")
         
-        subprocess_run(command, stderr=stderr_, stdout=stdout_, cwd=str(self.directory), env=env_)
+        subprocess_run(command, stderr=stderr_, stdout=stdout_, cwd=str(self.directory), env=env)
