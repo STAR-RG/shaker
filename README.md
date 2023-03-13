@@ -50,3 +50,61 @@ Add the following code to your GitHub Actions workflow configuration
 - ./shaker-js/shaker/shaker.py --stress-runs 1 --no-stress-runs 1 jest "react-hook-form" --tests-command "yarn test"
 
 To see examples [visit our website](https://star-rg.github.io/shaker/).
+
+
+## Github actions example
+1 -  Fork the repository (it can be any project of yours).
+    - git clone your fork or your own project.
+2- Into the project, create a folder called .github/workflows.
+    - mkdir -p .github/workflows
+3 - Create a file .yml, for example main.yml.
+    - touch .github/workflows/main.yml
+
+
+4 - Write the action that runs Shaker in the .yml file :
+
+```yml
+name: CI # This is a basic workflow to help you get started with Actions 
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - name: Java tests
+        uses: STAR-RG/shaker@main
+        with:
+          tool: maven
+          runs: 3
+```
+
+
+and
+
+```shell
+git add .github
+git commit -m "add shaker action"
+git push
+
+
+git commit --allow-empty -m "empty commit to trigger the action"
+git push
+```
+

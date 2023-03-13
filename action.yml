@@ -20,6 +20,11 @@ inputs:
     default: "3"
     required: false
 
+  test_command:
+    description: Command to run tests
+    default: "yarn test"
+    required: false
+
 runs:
   using: docker
   image: Dockerfile
