@@ -19,10 +19,9 @@ inputs:
     description: Number of Shaker runs
     default: "3"
     required: false
-
   tests_command:
+    default: "yarn test"
     description: Command to run tests
-    default: "npm run test"
     required: false
 
 runs:
