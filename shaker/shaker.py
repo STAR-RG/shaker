@@ -94,6 +94,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "-tc",
         "--tests-command",
+        default="yarn test"
         type=str,
         help="specify the command to tun tests you want Flaky Forcer to run",
     )

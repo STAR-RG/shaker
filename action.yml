@@ -20,7 +20,7 @@ inputs:
     default: "3"
     required: false
   tests_command:
-    default: "yarn test"
+    default: yarn test
     description: Command to run tests
     required: false
 
