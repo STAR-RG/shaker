@@ -43,4 +43,9 @@ Add the following code to your GitHub Actions workflow configuration
 
 # Examples
 
+
+## Jest example 
+
+- ./shaker-js/shaker/shaker.py --stress-runs 1 --no-stress-runs 1 jest "react-styleguidist" --tests-command "yarn test:jest"
+
 To see examples [visit our website](https://star-rg.github.io/shaker/).
