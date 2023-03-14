@@ -1,7 +1,7 @@
 #!/bin/sh
 
 cp -r "/__shaker" "./"
-python3 "./__shaker/shaker.py" $INPUT_TOOL "." -o "./__shaker_output" -nsr $INPUT_NO_STRESS_RUNS -sr $INPUT_RUNS -tc $INPUT_TESTS_COMMAND
+python3 "./__shaker/shaker.py" $INPUT_TOOL "." -o "./__shaker_output" -nsr $INPUT_NO_STRESS_RUNS -sr $INPUT_RUNS #-tc $INPUT_TESTS_COMMAND
 ret=$?
 
 #counting the tests
