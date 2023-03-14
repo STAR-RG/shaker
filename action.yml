@@ -8,6 +8,9 @@ inputs:
   tool:
     description: Tool
     required: true
+  tests_command:
+    description: Runner
+    required: true
   extra_arguments:
     description: Extra arguments
     required: false
