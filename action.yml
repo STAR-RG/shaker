@@ -19,10 +19,6 @@ inputs:
     description: Number of Shaker runs
     default: "3"
     required: false
-  tests_command:
-    default: "yarn test"
-    description: Command to run tests
-    required: false
 
 runs:
   using: docker
