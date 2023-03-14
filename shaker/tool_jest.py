@@ -31,7 +31,8 @@ class Jest(BaseTool):
         env["JEST_JUNIT_UNIQUE_OUTPUT_NAME"] = "true"
         env["JEST_JUNIT_OUTPUT_DIR"] = string_report
 
-        if(tests_command == None) tests_command = "yarn test"
+        if tests_command == None:
+            tests_command = "yarn test"
         command = (
             f"{tests_command} {self.tests_path} --reporters=default --reporters=jest-junit"
             if self.tests_path else f"{tests_command} --reporters=default --reporters=jest-junit"
