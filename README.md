@@ -108,3 +108,6 @@ git commit --allow-empty -m "empty commit to trigger the action"
 git push
 ```
 
+### TODO:
+
+- Reaproveitar a imagem do ubuntu utilizada
