@@ -31,6 +31,8 @@ Add the following code to your GitHub Actions workflow configuration
     # Optional, default: 3
     # Example: runs: "3"
     runs: "3"
+    
+    tests_command: "yarn test"
 ```
 
 ## Inputs
