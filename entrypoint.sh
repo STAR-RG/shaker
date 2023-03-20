@@ -16,7 +16,8 @@ do
   done
 done
 
-echo $tests
+fileresult="./output/__results.json"
+cat $fileresult
 # python3 "./__shaker/analytics.py" "./__shaker_output" $GITHUB_REPOSITORY $GITHUB_SHA $tests $INPUT_NO_STRESS_RUNS $INPUT_RUNS
 
 exit $ret
