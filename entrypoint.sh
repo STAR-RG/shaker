@@ -20,13 +20,6 @@ fileresult="./output/__results.json"
 cat $fileresult
 result=$(<$fileresult)
 
-curl -X POST -d "{
-  "tool": "$INPUT_TOOL",
-  "folder_output": "$INPUT_OUTPUT_FOLDER",
-  "INPUT_TESTS_COMMAND": "$INPUT_TESTS_COMMAND",
-  "results": "$result"
-}" "https://flakybd-97b53-default-rtdb.firebaseio.com.json"
-
-# python3 "./__shaker/analytics.py" "./__shaker_output" $GITHUB_REPOSITORY $GITHUB_SHA $tests $INPUT_NO_STRESS_RUNS $INPUT_RUNS
+python3 "./__shaker/analytics.py"
 
 exit $ret
