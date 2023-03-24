@@ -31,7 +31,7 @@ with open(Path('./output/') / "__results.json") as f:
     total_runs = args.nsr + (args.sr * 4)
 
 
-    repoInfo = {"name": args.repo, "ref": args.ref, "num_tests": args.numtests, "failures": failures}
+    repoInfo = {"name": args.repo, "ref": args.ref, "num_tests": args.numtests}
     repoJson = json.loads(json.dumps(repoInfo))
     failures = json.load(f)
     
