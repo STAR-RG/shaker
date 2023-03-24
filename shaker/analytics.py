@@ -9,7 +9,7 @@ from pathlib import Path
 
 with open(Path('./output/') / "__results.json") as f:
     failures = json.load(f)
-    post("https://flakybd-97b53-default-rtdb.firebaseio.com.json", json=failures)
+    post("https://flakybd-97b53-default-rtdb.firebaseio.com/.json", json=failures)
 
 def default_post():
     repoUrl = "https://my-new-app-denini.herokuapp.com/repos"
