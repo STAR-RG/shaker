@@ -53,6 +53,10 @@ Add the following code to your GitHub Actions workflow configuration
 - ./shaker-js/shaker/shaker.py --stress-runs 1 --no-stress-runs 1 jest "jests-tests-example" --tests-command "yarn test" --output-folder "jests-tests-example/output"
 
 
+## Karma example
+
+- ./shaker-js/shaker/shaker.py --stress-runs 1 --no-stress-runs 1 karma "react-helmet" --tests-command "yarn test"
+
 To see examples [visit our website](https://star-rg.github.io/shaker/).
 
 

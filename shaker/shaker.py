@@ -64,7 +64,7 @@ if __name__ == "__main__":
     parser = ArgumentParser()
 
     parser.add_argument(
-        "tool", choices=["pytest", "maven", "jest"], help="specify testing tool"
+        "tool", choices=["pytest", "maven", "jest", "karma"], help="specify testing tool"
     )
     parser.add_argument("directory", help="specify directory")
     parser.add_argument("-e", "--extra-arguments",
