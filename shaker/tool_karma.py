@@ -24,11 +24,12 @@ class Karma(BaseTool):
 
     def run_tests(self, report_folder, tests_command):
         
-        out_put = '\\output\\'
-        string_report = str(report_folder).split(out_put)[1]
-        string_report = string_report[0:len(string_report)] + '.xml'
-
-
+        string_report = str(report_folder).split('output/')[1]
+        string_report = './output/' + string_report[0:len(string_report)]
+    
+        #out_put = '\\output\\'
+        #string_report = str(report_folder).split(out_put)[1]
+        #string_report = string_report[0:len(string_report)] + '.xml'
         #env_ = os.environ.copy()
         #env_["JEST_JUNIT_UNIQUE_OUTPUT_NAME"] = "true"
         #env_["JEST_JUNIT_OUTPUT_DIR"] = string_report
